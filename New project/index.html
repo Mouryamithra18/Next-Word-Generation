@@ -1,0 +1,47 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snake Sprint</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <h1>Snake Sprint</h1>
+      <div class="stats">
+        <p>Score: <span id="score">0</span></p>
+        <p>Best: <span id="best">0</span></p>
+      </div>
+    </header>
+
+    <section class="game-wrap">
+      <canvas id="board" width="480" height="480" aria-label="Snake game board"></canvas>
+      <div id="overlay" class="overlay show">
+        <h2 id="overlay-title">Ready?</h2>
+        <p id="overlay-text">Press Space or tap Start to play.</p>
+      </div>
+    </section>
+
+    <section class="controls">
+      <button id="start-btn">Start</button>
+      <button id="pause-btn">Pause</button>
+      <button id="restart-btn">Restart</button>
+    </section>
+
+    <section class="mobile-pad" aria-label="Direction controls">
+      <button data-dir="up" class="dir">↑</button>
+      <div class="middle">
+        <button data-dir="left" class="dir">←</button>
+        <button data-dir="down" class="dir">↓</button>
+        <button data-dir="right" class="dir">→</button>
+      </div>
+    </section>
+
+    <p class="hint">Use arrow keys or WASD. Space toggles pause.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

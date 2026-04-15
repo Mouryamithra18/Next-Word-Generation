@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Context Canvas | Next Word Prediction</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background-orb orb-one"></div>
+  <div class="background-orb orb-two"></div>
+
+  <main class="page-shell">
+    <section class="hero card">
+      <div class="hero-copy">
+        <h1>Next Word Prediction</h1>
+        <p class="lead">
+          Type a sentence and get the most relevant next-word suggestions in real time.
+        </p>
+        <div class="hero-chips">
+          <button class="prompt-chip" data-prompt="machine learning">machine learning</button>
+          <button class="prompt-chip" data-prompt="the model">the model</button>
+          <button class="prompt-chip" data-prompt="users can">users can</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="predictor card">
+      <div class="panel-head">
+        <div>
+          <p class="section-tag">Interactive Demo</p>
+          <h2>Predict the next word</h2>
+        </div>
+        <button id="clear-btn" class="ghost-btn" type="button">Clear</button>
+      </div>
+
+      <div class="status-pills">
+        <span class="status-pill" id="mode-label">Checking...</span>
+        <span class="status-pill" id="health-label">Starting up</span>
+      </div>
+
+      <label class="input-label" for="sentence-input">Sentence starter</label>
+      <textarea
+        id="sentence-input"
+        rows="4"
+        placeholder="Start typing a sentence and the app will suggest what can come next..."
+        spellcheck="false"
+      ></textarea>
+
+      <div class="input-meta">
+        <p id="status-text">Type a phrase to see predictions.</p>
+        <p id="token-count">0 words</p>
+      </div>
+
+      <div class="action-row">
+        <label class="selector-label" for="top-n-select">Suggestions</label>
+        <select id="top-n-select">
+          <option value="3" selected>Top 3</option>
+          <option value="4">Top 4</option>
+          <option value="5">Top 5</option>
+        </select>
+        <button id="copy-btn" class="ghost-btn" type="button">Copy Text</button>
+        <button id="reload-btn" class="ghost-btn" type="button">Reload Model</button>
+      </div>
+
+      <div class="suggestions-wrap">
+        <div class="section-row">
+          <h3>Suggestions</h3>
+          <span class="tiny-note">Click one to extend your sentence</span>
+        </div>
+        <div id="suggestions" class="suggestions empty">
+          <p class="empty-state">Suggestions will appear here.</p>
+        </div>
+      </div>
+
+      <div class="history-wrap">
+        <div class="section-row">
+          <h3>Chosen words</h3>
+          <span class="tiny-note">Your recent selections</span>
+        </div>
+        <ul id="history-list" class="history-list">
+          <li class="history-empty">No words selected yet.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
